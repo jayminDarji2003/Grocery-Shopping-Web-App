@@ -175,7 +175,6 @@ const HomePage = () => {
                   borderRadius: "10px",
                   overflow: "hidden",
                   boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-                  height: "470px",
                 }}
               >
                 <Link
@@ -190,16 +189,16 @@ const HomePage = () => {
                   />
                 </Link>
                 <div className="card-body" style={{ color: "black" }}>
-                  <h5 className="card-title " style={{ height: "60px" }}>
+                  <h5 className="card-title ">
                     {p.name}
                   </h5>
-                  <p className="card-text">
+                  {/* <p className="card-text">
                     {p.description.substring(0, 30)}...
-                  </p>
+                  </p> */}
                   
                   <p className="card-text fontBold">
                     {" "}
-                    Quantity:{p.quantity}
+                    Quantity : <b>{p.quantity}</b>  
                   </p>
 
                   <h5 className="card-text ">Price: ₹{p.price}</h5>
