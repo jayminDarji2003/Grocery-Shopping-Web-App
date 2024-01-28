@@ -163,7 +163,7 @@ const CartPage = () => {
                   </button>
                 ) : (
                   <button
-                    className="btn btn-outline-warning btn-sm"
+                    className="btn btn-secondary cartBtn btn-sm"
                     onClick={() => navigate("/login", { state: "/cart" })}
                   >
                     {" "}
