@@ -189,16 +189,14 @@ const HomePage = () => {
                   />
                 </Link>
                 <div className="card-body" style={{ color: "black" }}>
-                  <h5 className="card-title ">
-                    {p.name}
-                  </h5>
+                  <h5 className="card-title ">{p.name}</h5>
                   {/* <p className="card-text">
                     {p.description.substring(0, 30)}...
                   </p> */}
-                  
+
                   <p className="card-text fontBold">
                     {" "}
-                    Quantity : <b>{p.quantity}</b>  
+                    Quantity : <b>{p.quantity}</b>
                   </p>
 
                   <h5 className="card-text ">Price: ₹{p.price}</h5>
@@ -230,16 +228,16 @@ const HomePage = () => {
             ))}
           </div>
 
-          <div className="m-2 p-3">
+          <div className="m-2 p-3 d-flex justify-content-center">
             {products && products.length < total && (
               <button
-                className="btn btn-warning"
+                className="btn btn-secondary cartBtn"
                 onClick={(e) => {
                   e.preventDefault();
                   setPage(page + 1);
                 }}
               >
-                {loading ? " Loading..." : "Loadmore"}
+                {loading ? " Loading..." : "LOADMORE"}
               </button>
             )}
           </div>
