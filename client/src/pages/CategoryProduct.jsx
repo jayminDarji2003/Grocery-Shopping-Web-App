@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout/Layout";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { useCart } from "../context/cart";
+import toast from "react-hot-toast";
 
 const CategoryProduct = () => {
   const params = useParams();
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
+  const [cart, setCart] = useCart();
 
   useEffect(() => {
     if (params?.slug) getPrductsByCat();
@@ -35,48 +38,58 @@ const CategoryProduct = () => {
               {products?.map((p) => (
                 <div
                   className="card m-2"
-                  key={p._id}
-                  style={{ width: "18rem", borderRadius: "5px" }}
+                  style={{
+                    width: "18rem",
+                    borderRadius: "10px",
+                    overflow: "hidden",
+                    boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                  }}
                 >
-                  <img
-                    src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
-                    className="card-img-top"
-                    alt={p.name}
-                    // style={{ width: "200px", height: "200px" }}
-                  />
-                  <div className="card-body">
-                    <div className="card-name-price">
-                      <h5 className="card-title">{p.name}</h5>
-                      <h5 className="card-title card-price">
-                        {p.price.toLocaleString("en-US", {
-                          style: "currency",
-                          currency: "INR",
-                        })}
-                      </h5>
-                    </div>
-                    <p className="card-text ">
-                      {p.description.substring(0, 30)}...
+                  <Link
+                    to={`/product/${p.slug}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <img
+                      src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                      className="card-img-top rounded-5"
+                      alt={p.name}
+                      style={{ height: "200px" }}
+                    />
+                  </Link>
+                  <div className="card-body" style={{ color: "black" }}>
+                    <h5 className="card-title ">{p.name}</h5>
+                    {/* <p className="card-text">
+                    {p.description.substring(0, 30)}...
+                  </p> */}
+
+                    <p className="card-text fontBold">
+                      {" "}
+                      Quantity : <b>{p.quantity}</b>
                     </p>
-                    <div className="card-name-price">
+
+                    <h5 className="card-text ">Price: ₹{p.price}</h5>
+                    <div className="d-flex justify-content-between mt-auto">
                       <button
-                        className="btn btn-info ms-1"
-                        onClick={() => navigate(`/product/${p.slug}`)}
+                        className="btn btn-outline-secondary"
+                        onClick={() => {
+                          navigate(`/product/${p.slug}`);
+                        }}
                       >
                         More Details
                       </button>
-                      {/* <button
-                    className="btn btn-dark ms-1"
-                    onClick={() => {
-                      setCart([...cart, p]);
-                      localStorage.setItem(
-                        "cart",
-                        JSON.stringify([...cart, p])
-                      );
-                      toast.success("Item Added to cart");
-                    }}
-                  >
-                    ADD TO CART
-                  </button> */}
+                      <button
+                        className="btn btn-secondary cartBtn"
+                        onClick={() => {
+                          setCart([...cart, p]);
+                          localStorage.setItem(
+                            "cart",
+                            JSON.stringify([...cart, p])
+                          );
+                          toast.success("Item Added to cart");
+                        }}
+                      >
+                        Add to Cart
+                      </button>
                     </div>
                   </div>
                 </div>
