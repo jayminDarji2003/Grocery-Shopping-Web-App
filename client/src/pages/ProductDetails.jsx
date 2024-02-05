@@ -100,7 +100,7 @@ const ProductDetails = () => {
                   src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top rounded-5"
                   alt={p.name}
-                  style={{ height: "200px" }}
+                  style={{ height: "250px" }}
                 />
               </Link>
               <div className="card-body" style={{ color: "black" }}>
