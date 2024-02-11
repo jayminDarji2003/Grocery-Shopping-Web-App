@@ -82,7 +82,7 @@ const ProductDetails = () => {
           <p className="text-center">No Similar Products found</p>
         )}
         <div className="d-flex  flex-wrap">
-          {relatedProducts?.map((p) => (
+          {relatedProducts?.map((p, index) => (
             <div
               className="card m-2"
               style={{
@@ -91,6 +91,7 @@ const ProductDetails = () => {
                 overflow: "hidden",
                 boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
               }}
+              key={index}
             >
               <Link
                 to={`/product/${p.slug}`}

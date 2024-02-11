@@ -167,7 +167,7 @@ const HomePage = () => {
           <h1 className="text-center"> All Products </h1>
 
           <div className="d-flex flex-wrap">
-            {products?.map((p) => (
+            {products?.map((p, index) => (
               <div
                 className="card m-2"
                 style={{
@@ -176,6 +176,7 @@ const HomePage = () => {
                   overflow: "hidden",
                   boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
                 }}
+                key={index}
               >
                 <Link
                   to={`/product/${p.slug}`}
