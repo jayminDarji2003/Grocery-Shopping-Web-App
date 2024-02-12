@@ -224,17 +224,21 @@ const UpdateProduct = () => {
                   <Option value="1">Yes</Option>
                 </Select>
               </div>
-              <div className="mb-3">
-                <button className="btn btn-primary" onClick={handleUpdate}>
-                  UPDATE PRODUCT
-                </button>
-              </div>
-              <div className="mb-3">
-                <button className="btn btn-danger" onClick={handleDelete}>
-                  DELETE PRODUCT
-                </button>
+
+              <div className="d-flex justify-content-center gap-2">
+                <div className="mb-3">
+                  <button className="btn btn-primary" onClick={handleUpdate}>
+                    UPDATE PRODUCT
+                  </button>
+                </div>
+                <div className="mb-3">
+                  <button className="btn btn-danger" onClick={handleDelete}>
+                    DELETE PRODUCT
+                  </button>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>

@@ -32,7 +32,7 @@ const Products = () => {
                         <AdminMenu />
                     </div>
                     <div className="col-md-9 ">
-                        <h1 className="text-center">All Products List</h1>
+                        <h2 className="text-center">All Products List</h2>
                         <div className="d-flex flex-wrap">
                             {products?.map((p) => (
                                 <Link
