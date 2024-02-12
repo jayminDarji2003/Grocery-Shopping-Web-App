@@ -141,7 +141,7 @@ const Search = () => {
                       More Details
                     </Link>
                     <button
-                      className="btn btn-secondary cartBtn"
+                      className="primaryButton"
                       onClick={() => {
                         setCart([...cart, p]);
                         localStorage.setItem(

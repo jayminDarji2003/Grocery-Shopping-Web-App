@@ -6,6 +6,34 @@
   box-sizing: border-box;
 }
 
+*::selection {
+  color: white;
+  background-color: #000000;
+}
+
+.primaryButton {
+  background-color: #000000;
+  color: white;
+  outline: none;
+  padding:5px 20px;
+  border-radius: 5px;
+}
+.primaryButton:hover {
+  background-color: #1b1b1b;
+}
+
+.secondaryButton{
+  background-color: orangered;
+  color: white;
+  outline: none;
+  padding:5px 20px;
+  border-radius: 8px;
+}
+
+.secondaryButton:hover {
+  background-color: rgb(233, 74, 16);
+}
+
 /* font-family: 'Poppins', sans-serif; */
 /* font-family: 'Playfair Display', serif; */
 
@@ -46,17 +74,19 @@
   margin-right: 10px;
   margin-top: 4px;
 }
+
 .search-form input {
   border: none;
   border-radius: 0;
 }
+
 .search-form button {
   background-color: #000000;
   border-radius: 0;
   color: white;
 }
 
-.search-form button:hover{
+.search-form button:hover {
   color: white;
   /* background-color: rgb(144,142,162); */
 }
@@ -65,13 +95,9 @@
 
 /* home page css starts here */
 
-.cartBtn{
-  background-color: #000000;
-  color: white;
-  outline: none;
-}
 
-.fontBold{
+
+.fontBold {
   /* font-weight: bold; */
   font-size: small;
 }
@@ -90,12 +116,12 @@
 .footer {
   color: white;
   padding: 25px;
-  background: #000000; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: #000000;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #434343,
+      #000000);
+  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #434343, #000000);
 }
 
@@ -108,6 +134,7 @@
 .footer a:hover {
   color: #ffefba;
 }
+
 /* =================================
   ======== page not found css ======= */
 .pnf {
@@ -135,11 +162,13 @@
   padding: 8px 22px;
   margin-top: 10px;
 }
+
 .pnf-btn:hover {
   background-color: black;
   color: white;
   border-radius: 8px;
 }
+
 /* ========================================= */
 /* =========contact us ========= */
 .contactus {
@@ -162,10 +191,12 @@
   font-size: 24px;
   text-transform: uppercase;
 }
+
 .cat-btn:hover {
   background-color: #434343;
   color: white;
 }
+
 /* ================
   ====dashboard
   =================== */
@@ -179,3 +210,17 @@
   color: white;
   padding: 20px 0px;
 }
+
+
+
+/* cart page styling start here  */
+
+/* @media (max-width: 767px) {
+  .cartImage {
+    width: 100% !important;
+  }
+} */
+
+
+
+/* cart page styling ends here  */

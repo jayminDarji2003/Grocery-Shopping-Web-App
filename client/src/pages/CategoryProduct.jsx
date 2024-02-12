@@ -78,7 +78,7 @@ const CategoryProduct = () => {
                         More Details
                       </button>
                       <button
-                        className="btn btn-secondary cartBtn"
+                        className="primaryButton"
                         onClick={() => {
                           setCart([...cart, p]);
                           localStorage.setItem(

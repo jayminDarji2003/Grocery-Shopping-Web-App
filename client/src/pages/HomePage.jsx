@@ -154,7 +154,7 @@ const HomePage = () => {
           </div>
           <div className="d-flex flex-column mt-4">
             <button
-              className="btn btn-secondary cartBtn"
+              className="primaryButton"
               onClick={() => window.location.reload()}
             >
               {" "}
@@ -211,7 +211,7 @@ const HomePage = () => {
                       More Details
                     </button>
                     <button
-                      className="btn btn-secondary cartBtn"
+                      className="primaryButton"
                       onClick={() => {
                         setCart([...cart, p]);
                         localStorage.setItem(

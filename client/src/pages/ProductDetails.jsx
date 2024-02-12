@@ -64,7 +64,7 @@ const ProductDetails = () => {
             <h6 className="mt-2">Category : {product.category.name}</h6>
           )}
           <button
-            className="btn btn-dark ms-1 mt-3"
+            className="primaryButton ms-1 mt-3"
             onClick={() => {
               setCart([...cart, product]);
               localStorage.setItem("cart", JSON.stringify([...cart, product]));
@@ -126,7 +126,7 @@ const ProductDetails = () => {
                     More Details
                   </button>
                   <button
-                    className="btn btn-secondary cartBtn"
+                    className="primaryButton"
                     onClick={() => {
                       setCart([...cart, p]);
                       localStorage.setItem(

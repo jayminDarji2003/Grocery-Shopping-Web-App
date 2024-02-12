@@ -28,6 +28,9 @@ import AdminOrders from "./pages/Admin/AdminOrders.jsx";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.jsx";
 import RefundPolicy from "./pages/RefundPolicy.jsx";
 import TermsOfService from "./pages/TermsOfServicePage.jsx";
+import CartPageTest from "./pages/CartPage.jsx";
+import CheckoutPage from "./pages/CheckoutPage.jsx";
+import PaymentPage from "./pages/PaymentPage.jsx";
 
 function App() {
   return (
@@ -36,9 +39,13 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/product/:slug" element={<ProductDetails />} />
         <Route path="/categories" element={<Categories />} />
-        <Route path="/cart" element={<CartPage />} />
         <Route path="/category/:slug" element={<CategoryProduct />} />
         <Route path="/search" element={<Search />} />
+
+        {/* going in deep  */}
+        <Route path="/cart" element={<CartPageTest />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/payment" element={<PaymentPage />} />
 
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="user" element={<Dashboard />} />

@@ -34,7 +34,7 @@ const SearchInput = () => {
                     value={values.keyword}
                     onChange={(e) => setValues({ ...values, keyword: e.target.value })}
                 />
-                <button className="btn btn-secondary  rounded-3 ms-0" type="submit">
+                <button className="primaryButton rounded-3" type="submit">
                     Search
                 </button>
             </form>
