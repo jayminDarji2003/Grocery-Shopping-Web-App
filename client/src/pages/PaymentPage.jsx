@@ -77,7 +77,7 @@ const PaymentPage = () => {
             </div>
             <div className="container text-center mt-3">
               <button
-                className="btn btn-danger"
+                className="btn btn-danger px-5"
                 onClick={handlePayment}
                 disabled={loading || !instance || !auth?.user?.address}
               >

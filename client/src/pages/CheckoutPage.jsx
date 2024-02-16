@@ -47,8 +47,7 @@ const CheckoutPage = () => {
             <div>
               <Link to="/payment">
                 <button className="btn btn-danger px-5 ">
-                  Proceed to Payment{" "}
-                  <i class="fa-solid fa-arrows-turn-right p-2"></i>
+                  Proceed to Payment <i class="fa-solid fa-credit-card m-lg-1"></i>
                 </button>
               </Link>
             </div>

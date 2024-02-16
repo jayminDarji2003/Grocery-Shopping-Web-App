@@ -163,7 +163,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="col-md-10 mt-3">
+        {/* <div className="col-md-10 mt-3">
           <h1 className="text-center"> All Products </h1>
 
           <div className="d-flex flex-wrap">
@@ -191,10 +191,6 @@ const HomePage = () => {
                 </Link>
                 <div className="card-body" style={{ color: "black" }}>
                   <h5 className="card-title ">{p.name}</h5>
-                  {/* <p className="card-text">
-                    {p.description.substring(0, 30)}...
-                  </p> */}
-
                   <p className="card-text fontBold">
                     {" "}
                     Quantity : <b>{p.quantity}</b>
@@ -227,6 +223,89 @@ const HomePage = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="m-2 p-3 d-flex justify-content-center">
+            {products && products.length < total && (
+              <button
+                className="btn btn-secondary cartBtn"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setPage(page + 1);
+                }}
+              >
+                {loading ? " Loading..." : "LOADMORE"}
+              </button>
+            )}
+          </div>
+        </div> */}
+
+        <div className="col-md-10 mt-3">
+          <h1 className="text-center"> All Products </h1>
+
+          <div className="d-flex justify-content-center">
+            {" "}
+            {/* Wrap with this div */}
+            <div className="card-container d-flex flex-wrap justify-content-center">
+              {" "}
+              {/* Add this container */}
+              {products?.map((p, index) => (
+                <div
+                  className="card m-2"
+                  style={{
+                    width: "18rem",
+                    borderRadius: "10px",
+                    overflow: "hidden",
+                    boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                  }}
+                  key={index}
+                >
+                  <Link
+                    to={`/product/${p.slug}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <img
+                      src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                      className="card-img-top rounded-5"
+                      alt={p.name}
+                      style={{ height: "250px" }}
+                    />
+                  </Link>
+                  <div className="card-body" style={{ color: "black" }}>
+                    <h5 className="card-title ">{p.name}</h5>
+                    <p className="card-text fontBold">
+                      {" "}
+                      Quantity : <b>{p.quantity}</b>
+                    </p>
+
+                    <h5 className="card-text ">Price: ₹{p.price}</h5>
+                    <div className="d-flex justify-content-between mt-auto">
+                      <button
+                        className="btn btn-outline-secondary"
+                        onClick={() => {
+                          navigate(`/product/${p.slug}`);
+                        }}
+                      >
+                        More Details
+                      </button>
+                      <button
+                        className="primaryButton"
+                        onClick={() => {
+                          setCart([...cart, p]);
+                          localStorage.setItem(
+                            "cart",
+                            JSON.stringify([...cart, p])
+                          );
+                          toast.success("Item Added to cart");
+                        }}
+                      >
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="m-2 p-3 d-flex justify-content-center">
