@@ -1,8 +1,28 @@
-# React + Vite
+# FreshMart : A Grocery Shopping Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- This is my final year of BCA project
+- This is basically a E-commerce platform for grocery shopping.
 
-Currently, two official plugins are available:
+## Features added
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Admin
+- Login
+- Manage Category
+- Manage Products
+- Manage Orders
+- Manage Users
+
+### Users
+- Login / Signup
+- Reset password
+- View Products
+- View all Categories
+- Filter products
+- Search for a product
+- View products details
+- Add products to cart
+- Checkout products, payment
+- Update profile
+
+## Have a look on it
+
