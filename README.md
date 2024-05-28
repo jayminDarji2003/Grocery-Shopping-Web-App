@@ -2,6 +2,14 @@
 
 - This is my final year of BCA project
 - This is basically a E-commerce platform for grocery shopping.
+- This web app is created using tech stack MERN srack
+
+## Tech stack
+  * React
+  * Node js
+  * Express js
+  * MongoDB
+  * Braintree for payment
 
 ## Features added
 
