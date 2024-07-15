@@ -18,7 +18,11 @@ const app = express()
 connectDB()
 
 //  midllewares
-app.use(cors())
+app.use(cors({
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true,
+}))
 app.use(express.json())
 app.use(morgan('dev'))
 
