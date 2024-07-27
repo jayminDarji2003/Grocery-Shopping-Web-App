@@ -4,6 +4,7 @@ import axios from "axios";
 // This Context is used to check if the user is "Loged-In" Or not....
 //  If the user is "Loged-In" then we will remove "register" and "login" option from the header and show the "Logout" option
 const AuthContext = createContext();
+
 const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useState({
         user: null, // By Default the user is not "Loged-In" (Obiously user have to login first)

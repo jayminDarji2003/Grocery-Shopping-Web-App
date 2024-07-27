@@ -7,6 +7,7 @@ import authRoute from "./routers/authRoute.js"
 import categoryRoute from "./routers/categoryRoute.js"
 import productRoute from './routers/productRoute.js'
 import userRoute from './routers/userRoute.js'
+import cookieParser from "cookie-parser";
 
 import cors from 'cors'
 
@@ -21,10 +22,11 @@ connectDB()
 app.use(cors({
     origin: "http://localhost:5173",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    credentials: true,
-}))
+    credentials: true, // Important to allow cookies
+}));
 app.use(express.json())
 app.use(morgan('dev'))
+app.use(cookieParser());
 
 //  using Router
 app.use('/api/v1/auth', authRoute)
