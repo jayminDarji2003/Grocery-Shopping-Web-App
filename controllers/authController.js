@@ -181,7 +181,10 @@ export const updateProfileController = async (req, res) => {
 
 export const getOrdersController = async (req, res) => {
     try {
-        const orders = await orderModel.find({ buyer: req.user._id }).populate("products", "-photo").populate("buyer", "name")
+        const orders = await orderModel.find({ buyer: req.user._id })
+            .populate("products", "-photo")  // populating products but excluding "photo" field means we don't want photo 
+            .populate("buyer", "name")  // here populating buyer and we only want name of buyer
+
         res.json(orders)
     } catch (error) {
         console.log(error)
