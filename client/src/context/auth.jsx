@@ -12,6 +12,7 @@ const AuthProvider = ({ children }) => {
     });
 
     //default axios
+    // here we are sending Authorization as default value = auth?.token
     axios.defaults.headers.common["Authorization"] = auth?.token;
 
     useEffect(() => {
